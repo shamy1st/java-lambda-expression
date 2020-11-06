@@ -6,6 +6,28 @@
 
 **Instead of**
 
+**1. Interface Implementation**
+
+        public class Main {
+            public static void main(String[] args) {
+                Printer printer = new PrinterImpl();
+                printer.print("Hello");
+            }
+        }
+
+        public interface Printer {
+            void print(String message);
+        }
+
+        public class PrinterImpl implements Printer {
+            @Override
+            public void print(String message) {
+                System.out.println(message);
+            }
+        }
+
+**2. Anonymous Class**
+
         public class Main {
             public static void main(String[] args) {
                 sayHello(new Printer() {
